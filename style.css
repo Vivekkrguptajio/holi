@@ -635,155 +635,106 @@ body {
     }
 }
 
-/* Mobile Optimization - Small Phones */
+
+
+/* --- Optimized Mobile Styles --- */
+@media (max-width: 768px) {
+    .holi-card {
+        width: calc(100% - 70px);
+        /* Leave space for vertical text (35px each) */
+    }
+}
+
 @media (max-width: 480px) {
+
+    /* Layout Adjustments */
     body {
-        padding: 15px;
+        padding: 5px;
     }
 
+    /* Shrink Vertical Text Layout */
+    .vertical-text {
+        width: 25px;
+        /* Thinner sidebars */
+    }
+
+    .text-scroll span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    /* Maximize Card Width */
     .holi-card {
+        width: calc(100% - 55px);
+        /* Maximized space (25px+25px sidebars + 5px gap) */
+        margin-top: 10px;
+    }
+
+    /* Main Greeting (Header) - Optimize Fonts */
+    .main-greeting {
+        padding: 15px 10px;
+        margin-bottom: 10px;
         border-radius: 20px;
     }
 
-    .banner {
-        padding: 20px 15px;
+    .greeting-prefix {
+        font-size: 16px;
     }
 
-    .banner-decoration {
+    .greeting-highlight {
         font-size: 28px;
+        /* Readable header size */
+        line-height: 1.3;
     }
 
-    .banner-decoration.left {
-        margin-right: 10px;
+    .greeting-subtitle {
+        font-size: 14px;
+        margin-top: 5px;
     }
 
-    .banner-decoration.right {
-        margin-left: 10px;
+    /* Name Input */
+    .name-input {
+        width: 95%;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 15px;
     }
 
-    .banner-content h1 {
-        font-size: 26px;
-    }
-
+    /* Timer - Compact View */
     .event-details {
-        padding: 20px 15px;
-        gap: 10px;
+        padding: 5px;
+        gap: 2px;
+        margin-bottom: 5px;
     }
 
     .detail-label {
-        font-size: 15px;
+        font-size: 18px;
+        /* readable but smaller */
     }
 
     .detail-separator {
         font-size: 18px;
     }
 
+    /* Main Message (Bottom) */
     .main-message {
-        padding: 25px 20px;
+        padding: 10px 5px;
+        width: 98%;
+        margin-top: 0;
     }
 
     .greeting {
         font-size: 18px;
-        margin-bottom: 20px;
-    }
-
-    .wish-text {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .emoji-decoration {
-        font-size: 22px;
-    }
-
-    .footer-message {
-        padding: 18px;
-    }
-
-    .footer-message p {
-        font-size: 18px;
-    }
-
-    .pichkari-button {
-        bottom: 10%;
-        padding: 15px 30px;
-        font-size: 18px;
-    }
-}
-
-/* Tablets and Medium Devices */
-@media (min-width: 481px) and (max-width: 768px) {
-    .banner {
-        padding: 22px 18px;
-    }
-
-    .banner-content h1 {
-        font-size: 32px;
-    }
-
-    .event-details {
-        padding: 22px 18px;
-    }
-
-    .main-message {
-        padding: 30px 25px;
-    }
-
-    .greeting {
-        font-size: 20px;
-    }
-
-    .wish-text {
-        font-size: 18px;
-    }
-}
-
-/* Landscape Mode Optimization */
-@media (max-height: 600px) and (orientation: landscape) {
-    body {
-        padding: 10px;
-    }
-
-    .holi-card {
-        max-width: 90vw;
-    }
-
-    .banner {
-        padding: 15px;
-    }
-
-    .banner-content h1 {
-        font-size: 22px;
-    }
-
-    .event-details {
-        padding: 15px;
-    }
-
-    .main-message {
-        padding: 20px;
-    }
-
-    .greeting {
-        font-size: 16px;
+        /* Smaller text */
         margin-bottom: 15px;
     }
 
     .wish-text {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .emoji-decoration {
-        font-size: 20px;
-        margin-top: 10px;
-    }
-
-    .footer-message {
-        padding: 12px;
-    }
-
-    .footer-message p {
         font-size: 16px;
+    }
+
+    /* GIF sizing */
+    .center-gif {
+        max-width: 80%;
     }
 }
