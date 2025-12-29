@@ -1,0 +1,789 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pichkari Animation Section */
+.pichkari-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    background: #ffffff;
+}
+
+/* Curtain Images */
+.curtain-image {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    z-index: 5;
+    transition: transform 3s linear;
+    /* Changed to slow linear motion */
+}
+
+.left-curtain {
+    left: 0;
+    object-position: right center;
+}
+
+.right-curtain {
+    right: 0;
+    object-position: left center;
+}
+
+/* Curtain Slide Animation */
+.left-curtain.slide {
+    transform: translateX(-100%);
+}
+
+.right-curtain.slide {
+    transform: translateX(100%);
+}
+
+/* Pichkari Button */
+.pichkari-button {
+    position: absolute;
+    bottom: 15%;
+    z-index: 10;
+    padding: clamp(15px, 3vw, 20px) clamp(30px, 6vw, 50px);
+    font-size: clamp(18px, 4vw, 28px);
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff1744, #f50057, #c51162);
+    border: 4px solid #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 23, 68, 0.6);
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pichkari-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(255, 23, 68, 0.8);
+}
+
+.pichkari-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(255, 23, 68, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+            0 0 40px rgba(255, 23, 68, 1);
+    }
+}
+
+/* Vertical Scrolling Text */
+.vertical-text {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    /* Reduced width further for mobile */
+    overflow: hidden;
+    z-index: 20;
+    /* Ensure on top but transparent */
+    pointer-events: none;
+    background-color: #ffffff;
+    /* Changed from white to transparent */
+}
+
+.left-text {
+    left: 0;
+}
+
+.right-text {
+    right: 0;
+}
+
+/* Make Holi card wider on mobile to fit content between text */
+.holi-card {
+    /* Existing styles remain... adjusting for text space */
+    width: calc(100% - 80px);
+    /* Leave space for vertical text */
+    margin: 0 auto;
+    max-width: 650px;
+    /* ... rest of styles */
+}
+
+.text-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.scroll-up {
+    animation-name: scrollUp;
+}
+
+.scroll-down {
+    animation-name: scrollDown;
+}
+
+.text-scroll span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 900;
+    letter-spacing: 8px;
+    background: linear-gradient(180deg,
+            #ff6b9d 0%,
+            #ffa07a 20%,
+            #ffd700 40%,
+            #98fb98 60%,
+            #87ceeb 80%,
+            #ff6b9d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+        /* Move half height (one full set) */
+    }
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-50%);
+        /* Start from bottom set */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Move down to top set */
+    }
+}
+
+/* Mobile optimization for vertical text */
+@media (max-width: 480px) {
+    .vertical-text {
+        width: 30px;
+        /* Reduced further for mobile */
+    }
+
+    .left-text {
+        left: 0;
+    }
+
+    .right-text {
+        right: 0;
+    }
+
+    .text-scroll span {
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft Pastel Gradient from Reference */
+    background: linear-gradient(180deg, #eacda3 0%, #d6ae7b 0%, #e0c3fc 0%, #8ec5fc 100%);
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    /* Fallback */
+    background: linear-gradient(to bottom, #e1bee7 0%, #b2ebf2 100%);
+    /* Combined Pink/Blue */
+    font-family: 'Hind', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    /* Prevent scroll from floating elements */
+}
+
+/* Floating Balloons Animation */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    /* Start below screen */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    /* Balloon Shape */
+    opacity: 0.9;
+    pointer-events: none;
+    animation: floatUp 15s linear infinite;
+    z-index: 1;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Balloon String */
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        bottom: -100px;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(10deg);
+        bottom: -100px;
+        /* Keep reference */
+    }
+}
+
+.holi-card {
+    /* Removed card styling to show directly on background */
+    background: transparent;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: none;
+    animation: pop 1.2s ease;
+    max-width: 650px;
+    width: calc(100% - 80px);
+    /* Keep space for vertical text */
+    margin: 0 auto;
+    overflow: visible;
+    border: none;
+    position: relative;
+    z-index: 5;
+}
+
+.holi-card::before {
+    display: none;
+    /* Remove border effect */
+}
+
+/* Restyle inner sections to look good without card container */
+.banner {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.event-details {
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.main-message {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.share-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.footer-message {
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Decorative Banner */
+.banner {
+    background: linear-gradient(135deg, #dc143c 0%, #ff1744 50%, #c62828 100%);
+    padding: 25px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+    border-bottom: 4px solid #b71c1c;
+}
+
+.banner::before,
+.banner::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.banner::before {
+    left: 20px;
+    border-width: 15px 15px 0 0;
+    border-color: #b71c1c transparent transparent transparent;
+}
+
+.banner::after {
+    right: 20px;
+    border-width: 0 15px 15px 0;
+    border-color: transparent #b71c1c transparent transparent;
+}
+
+.banner-decoration {
+    font-size: clamp(28px, 6vw, 40px);
+    animation: rotate 3s ease-in-out infinite;
+}
+
+.banner-decoration.left {
+    margin-right: 15px;
+}
+
+.banner-decoration.right {
+    margin-left: 15px;
+    animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+.banner-content h1 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: #ffffff;
+    font-size: clamp(26px, 5.5vw, 38px);
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Event Details */
+/* Event Details */
+.event-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 5px;
+    /* Reduced vertical padding */
+    background: transparent;
+    /* Made transparent as requested */
+    border-radius: 10px;
+    /* Pillow shape for better UI */
+    box-shadow: none;
+    /* Removed shadow */
+    margin-bottom: 5px;
+    /* Reduced from 25px to 5px to be closer to card below */
+    flex-wrap: nowrap;
+    border: none;
+    /* Removed border */
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    /* Align icon and text horizontally if split */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* Distribute space evenly */
+}
+
+.detail-label {
+    font-size: clamp(20px, 5vw, 28px);
+    /* Increased significantly */
+    font-weight: 800;
+    /* Clean Gradient */
+    background: linear-gradient(45deg, #ff0055, #ff6b00, #9c27b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes rainbow {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.detail-separator {
+    color: #ffd700;
+    font-size: 24px;
+    /* Increased size */
+    opacity: 0.8;
+}
+
+/* Main Message */
+.main-message {
+    padding: 10px 20px;
+    background: transparent;
+    /* Made transparent */
+    border-radius: 30px;
+    box-shadow: none;
+    /* Removed shadow */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+    margin-top: 5px;
+    /* Adjust spacing */
+}
+
+.greeting {
+    font-size: clamp(20px, 5vw, 24px);
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 600;
+    /* Added shadow for readability on transparent bg */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.wish-text {
+    font-size: clamp(16px, 3.8vw, 20px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(102, 126, 234, 0.05);
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.emoji-decoration {
+    font-size: clamp(22px, 5vw, 32px);
+    margin-top: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Share Section */
+.share-section {
+    padding: 30px;
+    background: linear-gradient(to bottom, #ffffff, #fff9e6);
+    border-top: 2px dashed #ffd700;
+    border-bottom: 2px dashed #ffd700;
+}
+
+.share-label {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: clamp(16px, 3.5vw, 20px);
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.name-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: clamp(16px, 3.5vw, 18px);
+    font-family: 'Tiro Devanagari Hindi', serif;
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
+    transform: scale(1.02);
+}
+
+.name-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: clamp(16px, 3.8vw, 20px);
+    font-family: 'Hind', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+    background: linear-gradient(135deg, #128C7E, #25D366);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(-1px);
+}
+
+.whatsapp-btn svg {
+    flex-shrink: 0;
+}
+
+/* Footer Message */
+.footer-message {
+    background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+    padding: 20px;
+    border-top: 3px solid #f39c12;
+}
+
+.footer-message p {
+    font-size: clamp(18px, 4vw, 24px);
+    font-weight: 700;
+    color: #d63031;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.footer-message .holi-dates {
+    font-size: clamp(12px, 2.8vw, 16px);
+    font-weight: 600;
+    color: #e17055;
+    margin-top: 8px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8) rotate(-2deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05) rotate(1deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Mobile Optimization - Small Phones */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .holi-card {
+        border-radius: 20px;
+    }
+
+    .banner {
+        padding: 20px 15px;
+    }
+
+    .banner-decoration {
+        font-size: 28px;
+    }
+
+    .banner-decoration.left {
+        margin-right: 10px;
+    }
+
+    .banner-decoration.right {
+        margin-left: 10px;
+    }
+
+    .banner-content h1 {
+        font-size: 26px;
+    }
+
+    .event-details {
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    .detail-label {
+        font-size: 15px;
+    }
+
+    .detail-separator {
+        font-size: 18px;
+    }
+
+    .main-message {
+        padding: 25px 20px;
+    }
+
+    .greeting {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .wish-text {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .emoji-decoration {
+        font-size: 22px;
+    }
+
+    .footer-message {
+        padding: 18px;
+    }
+
+    .footer-message p {
+        font-size: 18px;
+    }
+
+    .pichkari-button {
+        bottom: 10%;
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}
+
+/* Tablets and Medium Devices */
+@media (min-width: 481px) and (max-width: 768px) {
+    .banner {
+        padding: 22px 18px;
+    }
+
+    .banner-content h1 {
+        font-size: 32px;
+    }
+
+    .event-details {
+        padding: 22px 18px;
+    }
+
+    .main-message {
+        padding: 30px 25px;
+    }
+
+    .greeting {
+        font-size: 20px;
+    }
+
+    .wish-text {
+        font-size: 18px;
+    }
+}
+
+/* Landscape Mode Optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+
+    .holi-card {
+        max-width: 90vw;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .banner-content h1 {
+        font-size: 22px;
+    }
+
+    .event-details {
+        padding: 15px;
+    }
+
+    .main-message {
+        padding: 20px;
+    }
+
+    .greeting {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .wish-text {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .emoji-decoration {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .footer-message {
+        padding: 12px;
+    }
+
+    .footer-message p {
+        font-size: 16px;
+    }
+}

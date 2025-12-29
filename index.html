@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>होली तहरुक से - Happy Holi 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Pichkari Animation Section -->
+    <div class="pichkari-section" id="pichkariSection">
+        <!-- Left Curtain Image -->
+        <img src="left.jpg" alt="Left Curtain" class="curtain-image left-curtain" id="leftCurtain">
+
+        <!-- Right Curtain Image -->
+        <img src="right.jpg" alt="Right Curtain" class="curtain-image right-curtain" id="rightCurtain">
+
+        <!-- Button Overlay -->
+        <button class="pichkari-button" id="pichkariBtn">
+            🎨 पिचकारी चलाओ बाबू 🎨
+        </button>
+    </div>
+
+    <!-- Vertical Scrolling Text - Left Side (Moving Up) -->
+    <div class="vertical-text left-text" id="leftTextScroll">
+        <div class="text-scroll scroll-up">
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <!-- Duplicate for seamless loop -->
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+        </div>
+    </div>
+
+    <!-- Vertical Scrolling Text - Right Side (Moving Down) -->
+    <div class="vertical-text right-text" id="rightTextScroll">
+        <div class="text-scroll scroll-down">
+            <!-- Duplicate for seamless loop -->
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+            <span>HAPPY HOLI 2026</span>
+        </div>
+    </div>
+
+    <div class="holi-card" id="holiCard">
+
+        <!-- Event Details - Live Countdown -->
+        <div class="event-details">
+            <div class="detail-item">
+                <span class="detail-label" id="days">📅 -- दिन</span>
+            </div>
+            <div class="detail-separator">•</div>
+            <div class="detail-item">
+                <span class="detail-label" id="hours">⏰ -- घंटे</span>
+            </div>
+            <div class="detail-separator">•</div>
+            <div class="detail-item">
+                <span class="detail-label" id="minutes">⏱️ -- मिनट</span>
+            </div>
+        </div>
+
+        <!-- Main Message -->
+        <div class="main-message">
+            <p class="greeting">
+                आपको और आपके पूरे परिवार को<br>
+                होली की ढेर सारी शुभकामनाएं
+            </p>
+
+            <!-- Center Holi GIF -->
+            <div class="center-gif-container" style="margin: 15px 0;">
+                <img src="holi.gif" alt="Happy Holi Animation"
+                    style="max-width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+
+        <!-- Name Input and WhatsApp Share Section -->
+        <div class="share-section">
+            <p class="share-label">आपका शुभ नाम:</p>
+            <input type="text" id="nameInput" class="name-input" placeholder="यहाँ अपना नाम लिखें">
+            <button class="whatsapp-btn" id="whatsappBtn">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                WhatsApp पर शेयर करें
+            </button>
+        </div>
+
+        <!-- Footer Message -->
+        <div class="footer-message">
+            <p>Happy Holi 2026</p>
+            <p class="holi-dates">होलिका दहन: 2 मार्च • रंगवाली होली: 3 मार्च</p>
+        </div>
+    </div>
+
+    <script>
+        // Check for "from" parameter in URL to personalize greeting
+        const urlParams = new URLSearchParams(window.location.search);
+        const fromName = urlParams.get('from');
+
+        if (fromName) {
+            const greetingElement = document.querySelector('.greeting');
+            if (greetingElement) {
+                greetingElement.innerHTML = `<span style="color: #d32f2f; font-weight: bold;">${fromName}</span> की तरफ से<br>आपको और आपके पूरे परिवार को<br>होली की ढेर सारी शुभकामनाएं`;
+            }
+        }
+
+        // Generate Floating Balloons
+        function createBalloons() {
+            const colors = ['#ff9f43', '#a29bfe', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#ff5252', '#7bed9f'];
+            const numBalloons = 15;
+
+            for (let i = 0; i < numBalloons; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+
+                // Random properties
+                const size = Math.random() * 30 + 30; // 30px to 60px
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animDuration = Math.random() * 10 + 10; // 10s to 20s
+                const animDelay = Math.random() * 5;
+
+                balloon.style.width = `${size}px`;
+                balloon.style.height = `${size * 1.2}px`; // Oval shape ratio
+                balloon.style.backgroundColor = color;
+                balloon.style.left = `${left}%`;
+                // Top/Bottom set by CSS animation
+                balloon.style.animationDuration = `${animDuration}s`;
+                balloon.style.animationDelay = `${animDelay}s`;
+
+                document.body.appendChild(balloon);
+            }
+        }
+        createBalloons();
+
+        // Pichkari Curtain Animation
+        const pichkariBtn = document.getElementById('pichkariBtn');
+        const leftCurtain = document.getElementById('leftCurtain');
+        const rightCurtain = document.getElementById('rightCurtain');
+        const leftText = document.querySelector('.left-text');
+        const rightText = document.querySelector('.right-text');
+        const pichkariSection = document.getElementById('pichkariSection');
+        const holiCard = document.getElementById('holiCard');
+
+        // Initially hide the card
+        holiCard.style.display = 'none';
+
+        pichkariBtn.addEventListener('click', function () {
+            // Hide button with animation
+            pichkariBtn.style.opacity = '0';
+            pichkariBtn.style.transform = 'scale(0)';
+
+            // Slide curtains and text after button disappears
+            setTimeout(() => {
+                // Left curtain and text slide to left
+                leftCurtain.classList.add('slide');
+                leftText.classList.add('slide-left');
+
+                // Right curtain and text slide to right
+                rightCurtain.classList.add('slide');
+                rightText.classList.add('slide-right');
+            }, 300);
+
+            // Hide pichkari section and show card after curtains slide
+            setTimeout(() => {
+                pichkariSection.style.opacity = '0';
+                setTimeout(() => {
+                    pichkariSection.style.display = 'none';
+                    holiCard.style.display = 'block';
+                }, 500);
+            }, 500);
+        });
+
+        // WhatsApp Share Functionality
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const nameInput = document.getElementById('nameInput');
+
+        whatsappBtn.addEventListener('click', function () {
+            const senderName = nameInput.value.trim() || 'आपके मित्र';
+
+            // Create personalized message with sender's name
+            const message = `🌸 *${senderName} की ओर से* 🌸\n\n` +
+                `आपको और आपके पूरे परिवार को\n` +
+                `होली की हार्दिक शुभकामनाएं! 🎨\n\n` +
+                `🌈 गुलाल की तरह रंगीन हो आपकी ज़िंदगी 🌈\n\n` +
+                `📅 होलिका दहन: 2 मार्च 2026\n` +
+                `🎊 रंगवाली होली: 3 मार्च 2026\n\n` +
+                `🎉 Happy Holi 2026! 🎉`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Open WhatsApp with message
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        });
+
+        // Live Countdown Timer to Holi 2026
+        // पूर्णिमा तिथि की शुरुआत: 2 मार्च 2026 को शाम 05:55 बजे
+        // पूर्णिमा तिथि का समापन: 3 मार्च 2026 को शाम 05:07 बजे
+        // रंगवाली होली: 3 मार्च 2026
+        const holiDate = new Date('March 3, 2026 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = holiDate - now;
+
+            // Calculate days, hours, minutes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Update the HTML elements
+            document.getElementById('days').innerHTML = `📅 ${days} दिन`;
+            document.getElementById('hours').innerHTML = `⏰ ${hours} घंटे`;
+            document.getElementById('minutes').innerHTML = `⏱️ ${minutes} मिनट`;
+
+            // If countdown is finished (Holi has arrived!)
+            if (distance < 0) {
+                document.getElementById('days').innerHTML = '🎉 होली';
+                document.getElementById('hours').innerHTML = '🎊 मुबारक';
+                document.getElementById('minutes').innerHTML = '🎨 हो';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+
+</html>
