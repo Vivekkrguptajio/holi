@@ -11,7 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
         rel="stylesheet">
-    <!-- Google AdSense -->
+    <!-- Google AdSense Verification -->
+    <meta name="google-adsense-account" content="ca-pub-7734023165300583">
+    <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7734023165300583"
         crossorigin="anonymous"></script>
 </head>
@@ -30,6 +32,18 @@
         <button class="pichkari-button" id="pichkariBtn">
             🎨 पिचकारी चलाओ बाबू 🎨
         </button>
+
+        <!-- Ad Unit - Pre-Curtain Top -->
+        <div class="ad-container-pre">
+            <iframe src="ad-pre.html" width="468" height="60" style="border:none; overflow:hidden;"
+                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+        </div>
+
+        <!-- Ad Unit - Pre-Curtain Bottom -->
+        <div class="ad-container-pre-bottom">
+            <iframe src="ad-pre.html" width="468" height="60" style="border:none; overflow:hidden;"
+                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+        </div>
     </div>
 
     <!-- Vertical Scrolling Text - Left Side (Moving Up) -->
@@ -58,45 +72,60 @@
             <span>HAPPY HOLI 2026</span>
             <span>HAPPY HOLI 2026</span>
             <span>HAPPY HOLI 2026</span>
-            <span>HAPPY HOLI 2026</span>
-            <span>HAPPY HOLI 2026</span>
-            <span>HAPPY HOLI 2026</span>
-            <span>HAPPY HOLI 2026</span>
-            <span>HAPPY HOLI 2026</span>
         </div>
     </div>
 
     <div class="holi-card" id="holiCard">
+
+        <!-- Ad Unit - Fixed Top -->
+        <div class="fixed-ad-top">
+            <iframe src="ad-fixed.html" width="320" height="50" style="border:none; overflow:hidden;"
+                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+        </div>
 
         <!-- Event Details - Live Countdown -->
         <div class="event-details">
             <div class="detail-item">
                 <span class="detail-label" id="days">📅 -- दिन</span>
             </div>
-            <div class="detail-separator">•</div>
             <div class="detail-item">
-                <span class="detail-label" id="hours">⏰ -- घंटे</span>
+                <span class="detail-separator">|</span>
             </div>
-            <div class="detail-separator">•</div>
+            <div class="detail-item">
+                <span class="detail-label" id="hours">🕒 -- घंटे</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-separator">|</span>
+            </div>
             <div class="detail-item">
                 <span class="detail-label" id="minutes">⏱️ -- मिनट</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-separator">|</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label" id="seconds">⚡ -- सेकंड</span>
             </div>
         </div>
 
         <!-- Main Message -->
         <div class="main-message">
             <p class="greeting">
-                आपको और आपके पूरे परिवार को<br>
+                <span class="greeting-prefix">आपको और आपके पूरे परिवार को</span><br>
                 होली की ढेर सारी शुभकामनाएं
             </p>
 
-            <!-- Center Holi GIF -->
-            <div class="center-gif-container" style="margin: 15px 0;">
-                <img src="holi.gif" alt="Happy Holi Animation"
-                    style="max-width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            <!-- Center GIF from user request -->
+            <div class="gif-container">
+                <img src="holi.gif" alt="Happy Holi Animation" class="center-gif">
+            </div>
+
+            <!-- Ad Unit - Fixed Bottom -->
+            <div class="fixed-ad-bottom">
+                <iframe src="ad-fixed.html" width="320" height="50" style="border:none; overflow:hidden;"
+                    sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
             </div>
         </div>
-
         <!-- Name Input and WhatsApp Share Section -->
         <div class="share-section">
             <p class="share-label">आपका शुभ नाम:</p>
@@ -203,14 +232,12 @@
         whatsappBtn.addEventListener('click', function () {
             const senderName = nameInput.value.trim() || 'आपके मित्र';
 
-            // Create personalized message with sender's name
-            const message = `🌸 *${senderName} की ओर से* 🌸\n\n` +
-                `आपको और आपके पूरे परिवार को\n` +
-                `होली की हार्दिक शुभकामनाएं! 🎨\n\n` +
-                `🌈 गुलाल की तरह रंगीन हो आपकी ज़िंदगी 🌈\n\n` +
-                `📅 होलिका दहन: 2 मार्च 2026\n` +
-                `🎊 रंगवाली होली: 3 मार्च 2026\n\n` +
-                `🎉 Happy Holi 2026! 🎉`;
+            // Generate Personalized Link
+            const baseUrl = window.location.origin + window.location.pathname;
+            const personalizedLink = `${baseUrl}?from=${encodeURIComponent(senderName)}`;
+
+            // Create personalized message with link (Link Only)
+            const message = `${personalizedLink}`;
 
             // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
