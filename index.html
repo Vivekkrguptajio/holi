@@ -35,14 +35,32 @@
 
         <!-- Ad Unit - Pre-Curtain Top -->
         <div class="ad-container-pre">
-            <iframe src="ad-pre.html" width="468" height="60" style="border:none; overflow:hidden;"
-                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '8a47e11124ab792cbcfcddd6e89ac622',
+                    'format': 'iframe',
+                    'height': 60,
+                    'width': 468,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript"
+                src="//www.highperformanceformat.com/8a47e11124ab792cbcfcddd6e89ac622/invoke.js"></script>
         </div>
 
         <!-- Ad Unit - Pre-Curtain Bottom -->
         <div class="ad-container-pre-bottom">
-            <iframe src="ad-pre.html" width="468" height="60" style="border:none; overflow:hidden;"
-                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '8a47e11124ab792cbcfcddd6e89ac622',
+                    'format': 'iframe',
+                    'height': 60,
+                    'width': 468,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript"
+                src="//www.highperformanceformat.com/8a47e11124ab792cbcfcddd6e89ac622/invoke.js"></script>
         </div>
     </div>
 
@@ -79,8 +97,17 @@
 
         <!-- Ad Unit - Fixed Top -->
         <div class="fixed-ad-top">
-            <iframe src="ad-fixed.html" width="320" height="50" style="border:none; overflow:hidden;"
-                sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'd54c0ac6e375a9bcd9f8690c9e26e07e',
+                    'format': 'iframe',
+                    'height': 50,
+                    'width': 320,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript"
+                src="//www.highperformanceformat.com/d54c0ac6e375a9bcd9f8690c9e26e07e/invoke.js"></script>
         </div>
 
         <!-- Event Details - Live Countdown -->
@@ -122,8 +149,17 @@
 
             <!-- Ad Unit - Fixed Bottom -->
             <div class="fixed-ad-bottom">
-                <iframe src="ad-fixed.html" width="320" height="50" style="border:none; overflow:hidden;"
-                    sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key': 'd54c0ac6e375a9bcd9f8690c9e26e07e',
+                        'format': 'iframe',
+                        'height': 50,
+                        'width': 320,
+                        'params': {}
+                    };
+                </script>
+                <script type="text/javascript"
+                    src="//www.highperformanceformat.com/d54c0ac6e375a9bcd9f8690c9e26e07e/invoke.js"></script>
             </div>
         </div>
         <!-- Name Input and WhatsApp Share Section -->
@@ -232,12 +268,14 @@
         whatsappBtn.addEventListener('click', function () {
             const senderName = nameInput.value.trim() || 'आपके मित्र';
 
-            // Generate Personalized Link
-            const baseUrl = window.location.origin + window.location.pathname;
-            const personalizedLink = `${baseUrl}?from=${encodeURIComponent(senderName)}`;
-
-            // Create personalized message with link (Link Only)
-            const message = `${personalizedLink}`;
+            // Create personalized message with sender's name
+            const message = `🌸 *${senderName} की ओर से* 🌸\n\n` +
+                `आपको और आपके पूरे परिवार को\n` +
+                `होली की हार्दिक शुभकामनाएं! 🎨\n\n` +
+                `🌈 गुलाल की तरह रंगीन हो आपकी ज़िंदगी 🌈\n\n` +
+                `📅 होलिका दहन: 2 मार्च 2026\n` +
+                `🎊 रंगवाली होली: 3 मार्च 2026\n\n` +
+                `🎉 Happy Holi 2026! 🎉`;
 
             // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
